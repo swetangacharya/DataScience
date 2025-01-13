@@ -22,7 +22,8 @@ This is How it looks when line 16 is uncommendted.
 ![image](https://github.com/user-attachments/assets/57e38093-2a8d-4a26-b43b-c945817059e1)
 
 This is How it looks when line 17 is uncommendted.
-![image](https://github.com/user-attachments/assets/ed567cf7-78c0-4a68-bbce-cd198533e2f9)
+<img width="295" alt="image" src="https://github.com/user-attachments/assets/402c1304-d8e0-46f4-bd76-15321db66c52" />
+
 
 > You can see above that without appliying permutation, we've bottom lines shifted to top.
 This is How it looks when line 18 is uncommendted.
