@@ -9,6 +9,11 @@ Look at the grayscale image of 64x64 pixels. we'll use scipy and numpy to decomp
 ![image](https://github.com/user-attachments/assets/7dddd88c-c221-40da-a6bd-f0f0cb9b3f68)
 
 ```
+from PIL import Image
+import numpy as np
+from scipy.linalg import lu
+from matplotlib import pyplot as plt
+
 img=Image.open('gray64x64.png')
 A=np.array(img)
 P,L,U=lu(A)
@@ -24,7 +29,7 @@ This is How it looks when line 16 is uncommendted.
 This is How it looks when line 17 is uncommendted.
 <img width="295" alt="image" src="https://github.com/user-attachments/assets/402c1304-d8e0-46f4-bd76-15321db66c52" />
 
-
-> You can see above that without appliying permutation, we've bottom lines shifted to top.
+**You can see above that without appliying permutation, we've bottom lines shifted to top.**
 This is How it looks when line 18 is uncommendted.
-![image](https://github.com/user-attachments/assets/68fa5912-6a69-4ccf-9cc4-b85e5638cfcc)
+<img width="303" alt="image" src="https://github.com/user-attachments/assets/857054a3-65d5-47d4-bd89-94e648d77562" />
+
