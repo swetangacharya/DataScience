@@ -13,15 +13,20 @@ They do the same thing in the same way, but coming from different directions.
   -  **PCA** finds a low-dimensional representation of a data set that contains as much as possible of the variation. The
 idea is that each of the n observations lives in p-dimensional space, but not all of these dimensions are equally interesting. PCA seeks a small numberof dimensions that are as interesting as possible, where the concept of interesting is measured by the amount that the observations vary along each dimension. Each of the dimensions found by PCA is a linear combination
 of the p features. We now explain the manner in which these dimensions,
-or principal components, are found  
+or principal components, are found
 
-$$  
-z <sub>i1 </sub> = &phi; <sub>11</sub> x <sub>i1</sub> +  &phi; <sub>21</sub> x <sub>i2</sub> +...+ &phi; <sub>p1</sub> x<sub> ip</sub>
-$$  
+$$  z_{i1}=\phi_{11}x_{i1}+\phi_{21}x_{i2}+...+\phi_{p1}x_{ip} $$
+
+
+
 
 The (&phi; <sub>11</sub>,&phi; <sub>21</sub>,...,&phi; <sub>p1</sub>) are the loadings of first principal components PC1.
 and (x <sub>i1 </sub>, x <sub>i2 </sub>,..., x<sub>ip </sub>) are the measured values of respective variables for a person1. i.e., The standardised (mean=0, std=1) data for each person.  
-- z <sub>11 </sub> is the new value for the person1 with axis of PC1.
+- z <sub>11 </sub> is the new value for the person1 with axis of PC1. and z_{21} is the new value for person2 with axis PC1.
+- The old variables ( Diastolic BP, Systolic BP, Weight, Hight) is replaced by (PC1,PC2,PC3,PC4).
+- We refer $z_{11},z_{21},...z_{n1}$ as scores of first principal component PC1 and $z_{12},z_{22},...z_{n2}$ as scores of second principle component PC2, and so on.
+- so what we are trying to achieve is  
+$$maximize_{(\phi_{11},\phi_{21},...,\phi_{p1)}}{\Sigma_{i=1} ^n (\Sigma_{j=1}^p (\phi_{j1}x_{ij}))^2}$$
 
 
 
