@@ -27,6 +27,7 @@ and (x <sub>i1 </sub>, x <sub>i2 </sub>,..., x<sub>ip </sub>) are the measured v
 - We refer $z_{11},z_{21},...z_{n1}$ as scores of first principal component PC1 and $z_{12},z_{22},...z_{n2}$ as scores of second principle component PC2, and so on.
 - so what we are trying to achieve is  
 $$maximize_{(\phi_{11},\phi_{21},...,\phi_{p1)}}{\Sigma_{i=1} ^n (\Sigma_{j=1}^p (\phi_{j1}x_{ij}))^2}$$
+  -- subject to $$\Sigma_{j=1}^p( \phi_{j1} ^2) = 1$$
 
 
 
