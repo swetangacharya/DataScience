@@ -1,6 +1,3 @@
-#https://towardsdatascience.com/select-features-for-machine-learning-model-with-mutual-information-534fe387d5c8/
-#https://thuijskens.github.io/2017/10/07/feature-selection/
-#https://machinelearningmastery.com/information-gain-and-mutual-information/
 
 from sklearn.tree import DecisionTreeClassifier as DTC
 from sklearn.datasets import load_breast_cancer as LBC
@@ -20,16 +17,17 @@ mi_scores = MIC(X,y)
 # first dataset where we don't reduce the feature
 X_train_1,X_test_1,y_train,y_test = tts(X,y,random_state=0,stratify=y)
 
+# Mutual Information score >0.2
 mi_score_selected_index = np.where(mi_scores >0.2)[0]
 X_2 = X[:,mi_score_selected_index]
 X_train_2,X_test_2,y_train,y_test = tts(X_2,y,random_state=0,stratify=y)
 
-
+# Mutual Information score < 0.2
 mi_score_selected_index = np.where(mi_scores < 0.2)[0]
 X_3 = X[:,mi_score_selected_index]
 X_train_3,X_test_3,y_train,y_test = tts(X_3,y,random_state=0,stratify=y)
 
-
+#Compare the 3 datasets with the Decision Tree classifier
 model_1 = DTC().fit(X_train_1,y_train)
 model_2 = DTC().fit(X_train_2,y_train)
 model_3 = DTC().fit(X_train_3,y_train)
@@ -39,7 +37,7 @@ score_3 = model_3.score(X_test_3,y_test)
 print(f"score_1:{score_1}n score_2:{score_2}n score_3:{score_3}")
 
 
-
+# use sklearn feature selection method - based on percentile
 selector = SP(percentile=50) # select features with top 50% MI scores
 selector.fit(X,y)
 X_4 = selector.transform(X)
