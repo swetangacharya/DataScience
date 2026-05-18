@@ -24,8 +24,9 @@ because Z is latent(unknown), the Expectation Maximization(EM) algorithm guesses
 
 Let us assume that our data come from two groups (k= 2 groups) $z_i \in {1,2}$. It follows multinomial distribution governed by mixing proportions $\pi_k$   
 The Conditional Distribution:  
-if we know a person belongs to group k (i.e., $z_i=k$), then their height follows a specific normal distribution with mean $\mu_k$ and variance $\{sigma_k}^2$
-$P(x_i|z_i=k)= N(x_i|\mu_k,{\sigma_k}^2= \frac{1}{\sqrt{2 \pi \sigma_k^2}} exp(-\frac{(x_i-\mu_k)^2)}{2 \sigma_k^2})$
+if we know a person belongs to group k (i.e., $z_i=k$), then their height follows a specific normal distribution with mean $\mu_k$ and variance $\{sigma_k}^2$   
+
+$P(x_i|z_i=k)= N(x_i|\mu_k,{\sigma_k}^2)= \frac{1}{\sqrt{2 \pi \sigma_k^2}} exp(-\frac{(x_i-\mu_k)^2)}{2 \sigma_k^2})$
 
 
 
