@@ -28,6 +28,18 @@ if we know a person belongs to group k (i.e., $z_i=k$), then their height follow
 
 $P(x_i|z_i=k)= N(x_i|\mu_k,{\sigma_k}^2)= \frac{1}{\sqrt{2 \pi \sigma_k^2}} exp(-\frac{(x_i-\mu_k)^2}{2 \sigma_k^2})$
 
+The joint and Marginal Distributions:  
+The joint probability of observing a height $x_i$ and its hidden group $z_i$ is:  
+$P(x_i,z_i=k) = P(z_i=k)P(x_i|z_i=k)= \pi_k \N(x_i|\mu_k,\sigma_k^2)$  
+Because $x_i is unobserved, we marginalize(sum) over all possible states of $Z$$ to find the probability of the observed data alone:
+
+$P(x_i)= \sum_{k=1}^{2} \pi_k \N(x_i|\mu_k,\sigma_k^2)$
+
+
+
+
+
+
 
 
 
