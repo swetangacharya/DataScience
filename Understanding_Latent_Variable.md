@@ -38,7 +38,12 @@ $P(x_i)= \sum_{k=1}^{2} \pi_k \mathcal{N}(x_i|\mu_k,\sigma_k^2)$
 Now, to find the parameter $\theta={\pi_k,\mu_k,\sigma_k^2}$, we maximize log-likelihood of the observed dataset X:   
 $log \ L(\theta|X)= \sum_{i=1}^N log \left( \sum_{k=1}^2 \pi_k 𝓝(x_i|\mu_k,\sigma_k^2)\right)$   
 
-The sum inside the logarithm makes direct analytical differentiation impossible. Instead, the Expectation-Maximization (EM) algorithm uses the posterior probability of the latent variable (called responsibility $\gamma_{ik}$)
+The sum inside the logarithm makes direct analytical differentiation impossible. Instead, the Expectation-Maximization (EM) algorithm uses the posterior probability of the latent variable (called responsibility $\gamma_{ik}$)   
+
+$\gamma_{ik}=P(z_i=k|x_i)= \left( \frac{\pi_k 𝓝(x_i|\mu_k,\sigma_k^2)}{\sum_{j=1}^2 \pi_k 𝓝(x_i|\mu_j,\sigma_j^2)}  \right)$
+
+This step calculates exactly how likely a specific height measurement belongs to the child cluster versus the adult cluster.
+
 
 
 
