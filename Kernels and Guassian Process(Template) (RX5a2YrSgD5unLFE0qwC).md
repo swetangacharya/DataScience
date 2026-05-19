@@ -1,33 +1,14 @@
 ---
 title: Kernels and Guassian Process(Template)
 description: A super secret template post!
-is_draft: true
-restrict_access: 
-  - alice@hotmail.com
-  - bob@gmail.com
-  - vtrLuoHOjfqb3Er9Sidy3P6VxulB
 ---
 
 :::info
 **New here?**  
 Every post begins with a random template to help you start writing.
 
-**Still confused?** 🤔  
-- [:icon[video] Watch the **Getting Started** video :icon[external-link]](https://www.youtube.com/watch?v=0h4gRvgoRn4&list=PL9Zhnnyw1lVND99JOWpTyYly9heBP4-Xh){target=_blank}
-- [:icon[file-text] Read the **Getting Started** guide](https://www.scipress.io/post/l7R0XuDTe6R1dC2dS5cc/Getting-Started)
-:::
 
----
 
-### Proprietary algorithm
-
-```
-initialize foo equal to 1
-initialize baz equal to ""
-
-for i = 1, 2, ... 10:
-  set baz := baz + "Oo"
-```
 
 *******------------------------------------------------------  
 #### Kernels:-  
