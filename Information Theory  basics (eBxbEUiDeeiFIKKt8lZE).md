@@ -24,15 +24,16 @@ https://www.britannica.com/science/information-theory/Entropy
    - It is a mesaure of how uncertain the events are. It is an average amount of Information you get from one sample when drawn from given probability distribution is. It tells you how unpredictable that probability distribution is.
       1. Let us understand it better. Say, we have Random Variable X and it takes the values $x_i, i=1,...,n$. And it is some probability distribution.  
       **self Information**  
-      $ I(x_i)=log\dfrac {1}{p(x_i)}$  
+      $I(x_i)=log\dfrac {1}{p(x_i)}$  
       This shows that less likely the event(i.e., less probability) more the information we gain. As an example if police is analyzing the details of Face of a burglar, and they found that he has big wart on his face that is rare and gives more information.
       2. now let us take the Avg of this self information, call it entropy.
         $H(x)= \sum_{i=1}^{n} I(x_i)P(x_i)$
-        ![Alt text](Entropy.png)        
+         <img width="313" height="264" alt="Entropy" src="https://github.com/user-attachments/assets/011c5022-cd03-4176-9d10-1e97bf5862fa" />
+     
         - see above, the graph shows that higher the probability of an occurring event, lower the suprise (Entropy).
         - In essense entropy is a measure of uncertainity, when our uncertainity is reduced we gain information. Thus, receiving an amount of information is equivalent to having exactly the same amount of entropy taken away.
         - **Important Point**- The entropy of a discrete variable depends 
-only on the probability distribution of its values. Changing the values of a discrete variable does not change its entropy provided the number of values stays the same. For ex. if dice values are doubled i.e., {2,4,6,8,10,12,14,16}, the probability associated with it (1/8) doesn't change and $H(X)=3    bits$
+only on the probability distribution of its values. Changing the values of a discrete variable does not change its entropy provided the number of values stays the same. For ex. if dice values are doubled i.e., {2,4,6,8,10,12,14,16}, the probability associated with it (1/8) doesn't change and $H(X)=3 bits$
 
 **Example**  
 Say, we've 8-sided die has 3 bits of entropy. Possible outcomes of Random Variable X =[000,001,010,011,100,101,110,111], now if we have the information about first 2 bits and say they are '01' then our entropy drops by factor of $2^H=2^2=4$,  so our uncertainty about the 
