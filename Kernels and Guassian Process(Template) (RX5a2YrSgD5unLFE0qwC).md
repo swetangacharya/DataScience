@@ -1,12 +1,11 @@
 ---
 title: Kernels and Guassian Process(Template)
-description: A super secret template post!
+description: want to know about Kernels and Gausian Process?
 ---
 
 :::info
 **New here?**  
-Every post begins with a random template to help you start writing.
-
+This explain Kernels and their uses.
 
 
 
@@ -79,7 +78,7 @@ $ {d_{Euclidean(x,y)}=((x_1-y_1)^2 + (x_2-y_2)^2+...(x_n-y_n)^2 )^{0.5}}$
 **Mahalanobis Distance:-**
 adjusts for correlations and different variances among variables. It measures distance by considering the covariance structure of the data: 
 $d_{mahalanobis}(x,y)=((x-y)^TS^{-1}(x-y))^{0.5}$  or  
-$D_M=((x-\mu)^T \Sigma^{-1}(x-\mu))^{0.5}$  
+$D_M=((x-\mu)^T \Sigma^{-1}(x-\mu))^{0.5}$ 
 Univariate Z-score :- $ Z_i =\frac {x_i- \bar x}{s}$, so $D_M$ is multidimentional representation of the one dimensional Z-score.
 
 **Key Differences:-** 
@@ -91,17 +90,3 @@ least squares loss function together with a weighted regularization term is comp
 
 ---
 
-:::info[`restrict_access`]{icon="vault"}
-Notice how the YAML frontmatter of this post includes
-
-```
-restrict_access: 
-  - bob@gmail.com
-  - alice@hotmail.com
-  - nPUHpcOPgnvzbdggJAx4
-```
-
-Only you (the post author) plus these three users will have access to this post once it's published (i.e. `is_draft: true`).
-
-To learn more, see our docs on [Access Control ->](https://www.scipress.io/post/sC51z8nreOEP4Cle6D17/Access-Control)
-:::
