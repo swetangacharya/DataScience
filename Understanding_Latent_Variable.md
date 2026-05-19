@@ -33,7 +33,12 @@ The joint probability of observing a height $x_i$ and its hidden group $z_i$ is:
 $P(x_i,z_i=k) = P(z_i=k)P(x_i|z_i=k)= \pi_k \mathcal{N}(x_i|\mu_k,\sigma_k^2)$  
 Because $x_i is unobserved, we marginalize(sum) over all possible states of $Z$ to find the probability of the observed data alone:
 
-$P(x_i)= \sum_{k=1}^{2} \pi_k \mathcal{N}(x_i|\mu_k,\sigma_k^2)$
+$P(x_i)= \sum_{k=1}^{2} \pi_k \mathcal{N}(x_i|\mu_k,\sigma_k^2)$  
+
+Now, to find the parameter $\theta={\pi_k,\mu_k,\sigma_k^2}$, we maximize log-likelihood of the observed dataset X:   
+$log \ L(\theta|X)= \sum_{i=1}^N log \left( \sum_{k=1}^2 \pi_k 𝓝(x_i|\mu_k,\sigma_k^2)\right)$   
+
+The sum inside the logarithm makes direct analytical differentiation impossible. Instead, the Expectation-Maximization (EM) algorithm uses the posterior probability of the latent variable (called responsibility $\gamma_{ik}$)
 
 
 
