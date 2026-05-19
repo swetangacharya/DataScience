@@ -42,7 +42,28 @@ The sum inside the logarithm makes direct analytical differentiation impossible.
 
 $\gamma_{ik}=P(z_i=k|x_i)= \left( \frac{\pi_k 𝓝(x_i|\mu_k,\sigma_k^2)}{\sum_{j=1}^2 \pi_k 𝓝(x_i|\mu_j,\sigma_j^2)}  \right)$
 
-This step calculates exactly how likely a specific height measurement belongs to the child cluster versus the adult cluster.
+This step calculates exactly how likely a specific height measurement belongs to the child cluster versus the adult cluster.    
+
+Now, for the maximization step, we'll find new $\mu_k$ for iteration t+1 ...   
+
+$\mu_k^{t+1} = \frac{\sum_{i=1}^N \gamma_{ik}x_i}{\sum_{i=1}^N \gamma_{ik}}$
+then we can find new variance...
+$\sigma_k^{t+1}= \frac{\sum_{i=1}^N \gamma_{ik} (x_i-\mu_k^{t+1})^2}{\sum_{i=1}^N \gamma_{ik}}$
+and $\pi_k^{t+1}= \frac{\sum_{i=1}^N \gamma_{ik}}{N}$    
+
+Let us take an example of hight(in cm) of few persons recorded as $X={160,170,180}$   
+suppose at t=0, we have initial guesses are:  
+cluster 1: $\pi_1=0.5,\mu_1=162, \sigma_1^2=25$   
+cluster 2: $\pi_1=0.5,\mu_1=178, \sigma_1^2=25$   
+
+step 1: E-Step(Compute responsibilities)  
+$x_1=160, P(x_1|z=1)= \frac{1}{5 \sqrt{2 \pi}} e^{-\frac{(160-162)^2}{2(25)}}=0.735$,  
+$x_1=160, P(x_1|z=2)= \frac{1}{5 \sqrt{2 \pi}} e^{-\frac{(160-178)^2}{2(25)}}=0.0001$,   
+$\frac{0.5 * 0.0735}{(0.5*0.0735)+(0.5*0.0001)=0.999$
+and $\gamma_{1,2}=1-0.999=0.001$  
+
+same way for $x_2=170$, responsibilities $\gamma_{2,1}=0.500 , \gamma_{2,2}=0.500 $
+same way for $x_2=170$, responsibilities $\gamma_{3,1}=0.001 , \gamma_{3,2}=0.999 $
 
 
 
