@@ -59,13 +59,16 @@ cluster 2: $\pi_1=0.5,\mu_1=178, \sigma_1^2=25$
 step 1: E-Step(Compute responsibilities)  
 $x_1=160, P(x_1|z=1)= \frac{1}{5 \sqrt{2 \pi}} e^{-\frac{(160-162)^2}{2(25)}}=0.735$,  
 $x_1=160, P(x_1|z=2)= \frac{1}{5 \sqrt{2 \pi}} e^{-\frac{(160-178)^2}{2(25)}}=0.0001$,   
-$\frac {(0.5 * 0.0735)}{(0.5*0.0735)+(0.5*0.0001)}$=0.999
+$\frac {(0.5 * 0.0735)}{(0.5*0.0735)+(0.5*0.0001)}=0.999$
 and $\gamma_{1,2}=1-0.999=0.001$  
 
 same way for $x_2=170$, responsibilities $\gamma_{2,1}=0.500 , \gamma_{2,2}=0.500 $
 same way for $x_2=170$, responsibilities $\gamma_{3,1}=0.001 , \gamma_{3,2}=0.999 $
 
-
+Step 2: M-Step (Update Parameters)  
+compute $\mu_1^{(1)}$ for cluster 1:      
+$\sum \gamma_{i,1}=0.999+0.500+0.001=1.500$, so new mean value is      
+$\mu_1^{(1)}=\frac{(0.999 \cdot 160)+(0.5 \cdot 170)+(0.001\cdot 180)}{1.5}=163.35$
 
 
 
