@@ -59,12 +59,13 @@ value of X provided by the value of Y, and vice versa. It is the average amount 
 - **Difference between Mutual Information and Conditional Entropy**    
   * Conditional Entropy measures average uncertainity remained about random variable Y after knowing the value of X.
   *  It tells you how much "noise" or unpredictability is left in Y once X is known. if knowing X completely determines Y then $H(Y|X)=0$. if knowing X doesn't give any info about Y then $H(Y|X)=H(Y).$  
-  **$ H(Y|X)= -\sum_{x \in X} \sum_{y \in Y} (P(x,y)  log_2(P(x|y)))$**  
+  **$H(Y|X)= -\sum_{x \in X} \sum_{y \in Y} (P(x,y)  log_2(P(x|y)))$**  
   * Conditional entropy is not symmetric, while mutual information is symmetric.
   if X and Y are independent then **$I(X;Y)=0$**.  if they are perfectly dependent then  
   **$I(X;Y)=H(X)=H(Y)$**  
-  * in summary, Conditional entropy quantifies the uncertainty left in one variable after observing another, while mutual information quantifies the amount of uncertainty reduced (or information gained) about one variable by knowing the other.  
-  ![Alt text](mutual_information.png)
+  * in summary, Conditional entropy quantifies the unce rtainty left in one variable after observing another, while mutual information quantifies the amount of uncertainty reduced (or information gained) about one variable by knowing the other.  
+   <img width="390" height="225" alt="mutual_information" src="https://github.com/user-attachments/assets/91e8303d-afaa-4dd8-8d9d-cc9c23a01fde" />
+
 
 - **Difference between Joint Entropy and Mutual Information**
     - **Joint Entropy** quantifies the total uncertainty associated with two random variables X and Y and defines as:  
@@ -75,6 +76,9 @@ value of X provided by the value of Y, and vice versa. It is the average amount 
 
       **$I(X;Y)=H(X)+H(Y)-H(X,Y)$**
       <img width="390" height="225" alt="mutual_information" src="https://github.com/user-attachments/assets/db51b38e-51a4-481a-977f-9b8c209338d4" />
+      
+      <img width="559" height="288" alt="mutual_information2" src="https://github.com/user-attachments/assets/a16197f5-490d-44d0-baa5-974fbe63ed3b" />
+
 
       * in a communication channel if input is $X$ and output $ Y=X+\eta$ where $\eta$ is a noise added during the transmission of input symbols.
       then the Conditional entropy $H(Y|X)$ is the entropy of the channel noise $H(\eta)$ added to the input $X$. from above diagram we can see..  
