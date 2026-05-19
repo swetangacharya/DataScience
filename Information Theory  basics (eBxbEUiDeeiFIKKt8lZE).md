@@ -19,8 +19,8 @@ While working with TensorFlow, we come across loss='sparse_categorical_crossentr
 
 
 https://www.britannica.com/science/information-theory/Entropy  
-**Entropy** 🤔 
-- $$ H(P)=-\sum p_i log(p_i) $$   
+**Entropy** 
+- $H(P)=-\sum p_i log(p_i)$
    - It is a mesaure of how uncertain the events are. It is an average amount of Information you get from one sample when drawn from given probability distribution is. It tells you how unpredictable that probability distribution is.
       1. Let us understand it better. Say, we have Random Variable X and it takes the values $x_i, i=1,...,n$. And it is some probability distribution.  
       **self Information**  
