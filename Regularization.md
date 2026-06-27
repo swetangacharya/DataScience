@@ -15,5 +15,9 @@ The goal is to find the set of coefficients that fit the data well (by minimizin
   3. $\beta_j$: coefficient for the $j^{th}$ coefficient, ensure non negative penalty)
   4. **SSE**: sum of square errors between predicted and actual value.
 
+$$ \left\{SSE+ \lambda \sum_{j=1}^p |\beta_j| \right\}$$
+
+$\left\ {SSE+ \lambda \sum_{j=1}^p |\beta_j| \right\ }$
+
 
   
