@@ -1,3 +1,8 @@
+This page contains all information that will help you to get the basic knowledge about AI and ML. 
+
+
+
+
 **LU Decoposition**
 
 It is a matrix factorization method where it factors a square matrix into Lower and Upper triangular matrix L and U  such that A=L U
