@@ -1,7 +1,10 @@
-This page contains all information that will help you to get the basic knowledge about AI and ML. 
+This page contains all information that will help you to get the basic knowledge about AI and ML. I've tried to provide theoretical information about various topics of NLP and ML in various markdown(.md) files. References for writing these files are taken from various articles, research papers and books. It is an attempt to collect simple and basic explanation of topic collected and presented in .md files.
 
 
 
+**Github repository:**  
+
+https://github.com/swetangacharya/DataScience
 
 **Colab links for NLP**
 
