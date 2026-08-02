@@ -214,9 +214,19 @@ $\color{blue} I(\theta)=
  [1] $l(\beta)= \sum_{i=1}^n[y_ilogp_i+(1-y_i)log(1-p_i)]$    
  [2] first derivative is $\sum x_i(y_i-np_i)$   
  [3] the second derivative(Hessian) of the log-likelihood with respect to $\beta$..  
-$\frac{\partial^2l(\beta)}{\partial\beta \partial \beta^T}=\sum [-n*p_i*(1-p_i)*x_ix_i^T]= -X^TWX$  
+$\frac{\partial^2l(\beta)}{\partial\beta \partial \beta^T}=\sum [-n*p_i*(1-p_i)*x_ix_i^T]= -X^TWX$
+$\frac{\partial^2l(\beta)}{\partial\beta \partial \beta^T}$=- $\sum_{i=1}^N x_i x_i^T p(x_i;\beta)(1-p(x_i;\beta))$ where $p(x_i;\beta)= \frac{e^{\beta^Tx_i}}{1+e^{\beta^T x_i}}$
+
   Vector form (xTWx): The Hessian can be expressed in a vector form by recognizing that H is a sum of terms like -n * pᵢ * (1 - pᵢ) * xᵢxᵢᵀ. Let W be a diagonal matrix with elements $W_i = -n * p_i * (1 - p_i)$. Then:   
-   $\color{green}H=\sum W_i*x_ix_i^T=X^TWX$, W is a diagonal matrix with elements related to the variance of the predicted probabilities. 
+$\color{green}H=\sum W_i*x_ix_i^T=X^TWX$, W is a diagonal matrix with elements related to the variance of the predicted probabilities.
+
+
+$\color{green}H(Y|X)=H(X,Y)-H(X)= \sum_x P(X=x)H(Y|X=x)$
+given a Joint probability distribution $P(X,Y)$, the conditional entropy $H(Y|X)$ is our average surprise when we are told the value of Y given that we know the value of X.   
+$\color{blue}H(Y|X) \le H(Y)$, if we know the value if input X then it reduces the uncertainty by some amount. it will be equal when there is an independence between X and Y. say X is a input R.V of a channel through which information (in bits) are transmitted, Y is a output R.V. Now if we receive a bit at output, it may reduce some uncertainty about the output. Hence, $H(Y|X) \le H(Y)$,
+
+
+   
 ## Here's a code block
 Scipress code blocks make your code look beautiful!
 
