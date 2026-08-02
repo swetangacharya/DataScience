@@ -21,7 +21,7 @@ While working with TensorFlow, we come across loss='sparse_categorical_crossentr
 https://www.britannica.com/science/information-theory/Entropy  
 **Entropy** 
 - $H(P)=-\sum p_i log(p_i)$
-   - It is a mesaure of how uncertain the events are. It is an average amount of Information you get from one sample when drawn from given probability distribution is. It tells you how unpredictable that probability distribution is.
+    - It is a mesaure of how uncertain the events are. It is an average amount of Information you get from one sample when drawn from given probability distribution is. It tells you how unpredictable that probability distribution is.
       1. Let us understand it better. Say, we have Random Variable X and it takes the values $x_i, i=1,...,n$. And it is some probability distribution.  
       **self Information**  
       $I(x_i)=log\dfrac {1}{p(x_i)}$  
@@ -80,7 +80,7 @@ value of X provided by the value of Y, and vice versa. It is the average amount 
       <img width="559" height="288" alt="mutual_information2" src="https://github.com/user-attachments/assets/a16197f5-490d-44d0-baa5-974fbe63ed3b" />
 
 
-      * in a communication channel if input is $X$ and output $ Y=X+\eta$ where $\eta$ is a noise added during the transmission of input symbols.
+      * in a communication channel if input is $X$ and output  $Y=X+\eta$ where $\eta$ is a noise added during the transmission of input symbols.
       then the Conditional entropy $H(Y|X)$ is the entropy of the channel noise $H(\eta)$ added to the input $X$. from above diagram we can see..  
       > $H(\eta)=H(Y)-I(X,Y) i.e., H(Y|X)=H(\eta)$   
     
@@ -143,12 +143,12 @@ value of X provided by the value of Y, and vice versa. It is the average amount 
 - Fisher information focuses on the amount of information that a random variable, or a sample of random variables, carries about an unknown parameter of a probability distribution.  
 - It measures how much the probability distribution changes when the parameter is altered. 
 - It is directly related to the precision with which the parameter can be estimated. A higher Fisher information implies a more precise estimate.  
-$ \color{yellow}I(\theta)= E_\theta \lbrack - \frac{\partial^2}{\partial \theta^2} ln \  p_x(x;\theta) \rbrack$ , where $\theta $ is parameter like mean etc.  or  
-$ \color{yellow}I(\theta)= E_\theta \lbrack - \frac{\partial^2}{\partial \theta^2} \ ln \  (\theta;x) \rbrack$  
+$\color{yellow}I(\theta)= E_\theta \lbrack - \frac{\partial^2}{\partial \theta^2} ln \  p_x(x;\theta) \rbrack$ , where $\theta$ is parameter like mean etc.  or  
+$\color{yellow}I(\theta)= E_\theta \lbrack - \frac{\partial^2}{\partial \theta^2} \ ln \  (\theta;x) \rbrack$  
 - what is score:- The score is the derivative (or gradient, for multiple parameters) of the log-likelihood function with respect to the parameter of interest. Mathematically, for a parameter $\theta$ and likelihood function $f(X;\theta)$. For vector parameters, it is the gradient with respect to $\theta$.
-- $ \color{red} Score=\frac {\partial}{\partial \theta}log f(X;\theta)$  
+- $\color{red} Score=\frac {\partial}{\partial \theta}log f(X;\theta)$  
 - Fisher information is defined as variance of score function.  
-$ \color{red} I_X(\theta)=Var \lparen \frac {\partial}{\partial \theta}log f(X;\theta) \rparen$  
+  $\color{red} I_X(\theta)=Var \lparen \frac {\partial}{\partial \theta}log f(X;\theta) \rparen$  
 -  or, equivalently, the expected value of the squared score:  
 $\color{red} I_X(\theta)=E \lbrack \lparen \frac {\partial}{\partial \theta}log \ f(X;\theta) \rparen^2 \rbrack$  
 - The score measures how sensitive the log-likelihood is to changes in the parameter $\theta $ indicating the direction and rate at which the likelihood increases or decreases as the parameter changes.
@@ -160,11 +160,11 @@ $\color{red} I_X(\theta)=E \lbrack \lparen \frac {\partial}{\partial \theta}log 
  
  For example, we've a  sample of independent observations $X=(x_1,x_2,...,x_n)$ from a normal distribution, whose variance $\sigma^2$ is known and mean $\mu$ is unknown. we want to estimate $\mu$.  
  - Likelihood function:- The likelihood function (the probability of observing the data given a particular value of $\mu$  
- $ \color{green} L(\mu,\sigma^2|x_1,x_2,...,x_n)= (2 \pi \sigma^2)^{-n/2} * \exp(\frac{-1}{2 \sigma^2} \sum_{j=1}^n (x_j-\mu)^2)  $  
+ $\color{green} L(\mu,\sigma^2|x_1,x_2,...,x_n)= (2 \pi \sigma^2)^{-n/2} * \exp(\frac{-1}{2 \sigma^2} \sum_{j=1}^n (x_j-\mu)^2)  $  
  - score function:- is the derivative of of the likelihood function with respect to $\mu$.  
- $ \color{green}S(\mu)=\frac{\sum(X_i-\mu)}{\sigma^2}$  
+ $\color{green}S(\mu)=\frac{\sum(X_i-\mu)}{\sigma^2}$  
  - Fisher Information:- The Fisher information $I(\mu)$ is the expected value of the square of the score function.  
- $ \color{green}I(\mu)=E[S(\mu)^2]=n/\sigma^2$  
+ $\color{green}I(\mu)=E[S(\mu)^2]=n/\sigma^2$  
  - Cramer-Rao Lower Bound:-  
  $\color{green}CRLB(\mu)=1/I(\mu)= \sigma^2/n$  
  This means that no unbiased estimator of $\mu$ can have a variance smaller than $\frac{\sigma^2}{n}$ 
@@ -203,18 +203,18 @@ Off-diagonal entries: Minimum possible covariances between parameter estimates.
 | The Fisher Information Matrix is used to estimate the variance-covariance matrix of the weights (by inverting the Fisher Information Matrix).  
 |  This allows you to compute standard errors, confidence intervals, and perform hypothesis tests for your logistic regression coefficients.  
 $\color{red}p_i= \frac{exp(\beta_0+\beta_1x_i)}{1+exp(\beta_0+\beta_1x_i)}$ ....Fisher_eq1.   
-$ \color{blue} I(\theta)=
+$\color{blue} I(\theta)=
 \begin{bmatrix}
    \sum_{i=1}^n p_i(1-p_i) & \sum_{i=1}^n p_i(1-p_i)x_i \\
    \sum_{i=1}^n p_i(1-p_i)x_i & \sum_{i=1}^n p_i(1-p_i)(x_i)^2
-\end{bmatrix} $    ....Fisher_eq2
+\end{bmatrix}$    ....Fisher_eq2
 
- we have log-odds is, $ \color{red}log \frac{p_i}{1-p_i}=\beta_0+\beta_1x_{i1}+...+\beta_px_{ip}$ ....Fisher_eq3  
+ we have log-odds is, $\color{red}log \frac{p_i}{1-p_i}=\beta_0+\beta_1x_{i1}+...+\beta_px_{ip}$ ....Fisher_eq3  
  - ways to find Fisher Information. $I(\theta)= X^TWX$, how?  
  [1] $l(\beta)= \sum_{i=1}^n[y_ilogp_i+(1-y_i)log(1-p_i)]$    
  [2] first derivative is $\sum x_i(y_i-np_i)$   
  [3] the second derivative(Hessian) of the log-likelihood with respect to $\beta$..  
-  $\frac{\partial^2l(\beta)}{\partial\beta \partial \beta^T}=\sum [-n*p_i*(1-p_i)*x_ix_i^T]= -X^TWX$  
+$\frac{\partial^2l(\beta)}{\partial\beta \partial \beta^T}=\sum [-n*p_i*(1-p_i)*x_ix_i^T]= -X^TWX$  
   Vector form (xTWx): The Hessian can be expressed in a vector form by recognizing that H is a sum of terms like -n * pᵢ * (1 - pᵢ) * xᵢxᵢᵀ. Let W be a diagonal matrix with elements $W_i = -n * p_i * (1 - p_i)$. Then:   
    $\color{green}H=\sum W_i*x_ix_i^T=X^TWX$, W is a diagonal matrix with elements related to the variance of the predicted probabilities. 
 ## Here's a code block
