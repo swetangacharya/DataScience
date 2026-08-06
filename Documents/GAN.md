@@ -14,6 +14,8 @@ we use a simple representation of each latent variable being sampled from a Gaus
 say that the result looks fake the discriminator, which wants to to compute **G**'s loss.
 
 	On to the generator **G**'s loss. For real data, it is easy: **G** does not care what **D** says about real data, so nothing happens to **G** when real data is used. But for     fake data, **G** does care about what **D** says. It wants **D** to call its fake data real, because that means it has successfully tricked **D** .
+	**G** only cares about the fake data, and **G** is successful if it tricks **D** into calling fake data real.  
+  $loss_G = E_{z \in N(0,1)} l(D(G(z)), y_{real})$
 
 
 > Ref: Edward Raff  
