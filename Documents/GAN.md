@@ -10,6 +10,10 @@ we use a simple representation of each latent variable being sampled from a Gaus
 	$loss_D = l(D(x),y_{real})+ l(D(G(z)),y_{fake})$  
   $loss_G = 0 + l(D(G(z)),y_{real})$  
 
-  $l(D(x),y_{real})$ gives us D’s loss on real data. Its loss on fake data is also a straightforward classification, except we replace the real data $x$ with the generator's output $G(z)$, and we use $y_{fake}$ as the target because the input to **D** is fake data from **G**.
+  $l(D(x),y_{real})$ gives us D’s loss on real data. Its loss on fake data is also a straightforward classification, except we replace the real data $x$ with the generator's output $G(z)$, and we use $y_{fake}$ as the target because the input to **D** is fake data from **G**.  The generator’s output is given to
+say that the result looks fake the discriminator, which wants to to compute **G**'s loss.
+
+	On to the generator **G**'s loss. For real data, it is easy: **G** does not care what **D** says about real data, so nothing happens to **G** when real data is used. But for     fake data, **G** does care about what **D** says. It wants **D** to call its fake data real, because that means it has successfully tricked **D** .
+
 
 > Ref: Edward Raff  
