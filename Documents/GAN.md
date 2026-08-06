@@ -5,4 +5,11 @@
 concepts in our data (which takes some manual trial and error). For example, some latent properties we might want to learn are smile/frown, hair color, and hairstyle. The values of z are called latent because we never observe what they actually are: the model has to infer them from the data. If we do a good job, the generator G can use this latent representation $z$ as a smaller and more compact representation of the data—kind of like a lossy form of compression.
 You can think of the generator as a sketch artist who has to take in a description (the latent vector $z$ ) and, from that, construct an accurate picture for the output! The same way a sketch artist’s drawing is a product of how they interpret your description; the meaning of these latent vectors depends on how the generator G interprets them. In practice,
 we use a simple representation of each latent variable being sampled from a Gaussian distribution ( $z_i = N(0,1)$ ).
+* **Loss of GAN** :  
+	D and G are both computing their loss from D’s output, and G’s loss is somehow the opposite of D’s.   
+	$loss_D = l(D(x),y_{real})+ l(D(G(z)),y_{fake})$  
+  $loss_G = 0 + l(D(G(z)),y_{real})$  
+
+  $l(D(x),y_{real})$ gives us D’s loss on real data. Its loss on fake data is also a straightforward classification, except we replace the real data $x$ with the generator's output $G(z)$, and we use $y_{fake}$ as the target because the input to **D** is fake data from **G**.
+
 > Ref: Edward Raff  
