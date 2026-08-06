@@ -19,6 +19,9 @@ say that the result looks fake the discriminator, which wants to to compute **G*
   $\color{magenta}\overbrace{G}^{min}\overbrace{D}^{max}E _{x \in D(x)} [log(D(x))] + E_{z \in N(0,1)} [log(1-D(G(z)))]$
   <img width="892" height="143" alt="image" src="https://github.com/user-attachments/assets/66002945-38b5-41a4-8911-1147200a5861" />
 
+Let us recap KL divergence
+$D_{KL} = \sum _x P(x)log \frac{P(x)}{Q(x)}$, we have log ratio of $P(x)$ and $Q(X)$, so if ratio is large then we can think that the outcomes that are high under $P(x)$ are ignored by (i.e., produced low outcome) $Q(x)$. but it is asymmetric. 
+
   
   
 
