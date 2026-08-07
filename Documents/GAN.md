@@ -19,18 +19,54 @@ say that the result looks fake the discriminator, which wants to to compute **G*
   $\color{magenta}\overbrace{G}^{min}\overbrace{D}^{max}E _{x \in D(x)} [log(D(x))] + E_{z \in N(0,1)} [log(1-D(G(z)))]$
   <img width="892" height="143" alt="image" src="https://github.com/user-attachments/assets/66002945-38b5-41a4-8911-1147200a5861" />
 
-- Let us recap KL divergence
+- Let us recap **KL divergence**
 $D_{KL} = \sum _x P(x)log \frac{P(x)}{Q(x)}$,
-Averaging is done according to distribution $P$, it compares how much probability $P(x)$ is assigned to that outcome to the how much probability assigned to same outcome by distribution $Q$ we have log ratio of $P(x)$ and $Q(X)$, so if ratio is large then we can think that the outcomes that are high under $P(x)$ are ignored by (i.e., produced low outcome) $Q(x)$. but it is asymmetric. But this works well when $Q$ assign some probability to every outcome that comes from $P$. because if $Q$ assign zero probability to any outcome then $log \frac{P(x)}{Q(x)}$ becomes $\infty$. keeping this in mind we define new divergence which is called
+- Averaging is done according to distribution $P$, it compares how much probability $P(x)$ is assigned to that outcome to the how much probability assigned to same outcome by distribution $Q$. Outcome that is unlikely under $P$ contribute very little.
+-  we have log ratio of $P(x)$ and $Q(X)$, so if ratio is large then we can think that the outcomes that are high under $P(x)$ are ignored by (i.e., produced low outcome) $Q(x)$. but it is asymmetric. But this works well when $Q$ assign some probability to every outcome that comes from $P$. because if $Q$ assign zero probability to any outcome then $log \frac{P(x)}{Q(x)}$ becomes $\infty$. keeping this in mind we define new divergence which is called
 **Janson-Shannon Divergence**, which is symmetric.
   P={0.2,0.3,0.5} and Q={0.3,0.4,0.3}
 then $M =\frac{P+Q}{2}$, that is M ={0.25,0.35,0.4}
 
 $D_{JS}(P||Q) = \frac{D_{KL}(P||M) + D_{KL}(Q||M))}{2}$  
-$D_{KL}(P||M)=0.1193, D_{KL}(P||M)=0.1193,D_{KL}(Q||M)=0.1109$
-so, $D_{JS}(P||Q) = 0.1151$, which tells in an average there is a 0.1151 bit of difference if we take samples from distribution $Q$ instead of $P$. JSD value is always between [0,1] bits.
+$D_{KL}(P||M)=0.1193, D_{KL}(P||M)=0.1193,D_{KL}(Q||M)=0.1109$  
+so, $D_{JS}(P||Q) = 0.1151$,   
+which tells in an average there is a 0.1151 bit of difference if we take samples from distribution $Q$ instead of $P$. JSD value is always between [0,1] bits.  
 
-  
+**Wasserstein Distance**   **(Earth mover's distance)**  
+The cost of moving dirt is **Cost = mass x distance**  
+Wasserstein Distance finds the transport plan that minimizes total cost. key is to move near by mass to near by location
+Only transport far when you absolutely must.   
+$\color{magenta}W_1(P,Q)= \int_{- \infty}^{ \infty}|F_P(x)-F_Q(x)|dx$
+
+
+```python
+>>> from scipy.stats import wasserstein_distance
+>>> x,y=[0,1],[0,2]  # location of observations
+>>> p,q=[0.5,0.5],[0.25,0.75] # Probability weights
+>>> distance = wasserstein_distance(x,y,p,q)
+>>> print(distance)
+1.0
+```
+```python
+>>> from scipy.spatial.distance import jensenshannon
+>>> import numpy as np
+>>> p=np.array([0.2,0.3,0.5])
+>>> q=np.array([0.3,0.4,0.3])
+>>> distance = jensenshannon(p, q)
+>>> print(f"Jensen–Shannon distance: {distance:.4f}")
+Jensen–Shannon distance: 0.1458
+
+>>> x,y=[0,1,2],[0,1,2]  # location of observations
+>>> wasserstein_dist= wasserstein_distance(x,y,p,q)
+>>> print(f"wasserstein_disttance:{wasserstein_dist:.4f} ")
+wasserstein_disttance:0.3000
+```  
+**manual calculation**
+$CDF_p= [0.2,0.5,1.0]$  
+$CDF_q= [0.3,0.7,1.0]$  
+their differences are  
+$|02-0.3|=0.1,  |0.5-0.7|=0.2, |1.0-1.0|=0$  
+$W_1= 0.1(1-0)+0.2(2-1)=0.3$
 
   
   
