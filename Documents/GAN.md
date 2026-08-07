@@ -69,6 +69,20 @@ $|02-0.3|=0.1,  |0.5-0.7|=0.2, |1.0-1.0|=0$
 $W_1= 0.1(1-0)+0.2(2-1)=0.3$
 
   
+**Stability of the GAN training.**
+
+- Generative Adversarial Networks, or GANs, are challenging to train.
+
+- The discriminator model must classify a given input image as real (from the dataset) or fake (generated), and the generator model must generate new and plausible images.
+The reason GANs are difficult to train is that the architecture involves the simultaneous training of a generator and a discriminator model in a zero-sum game. Stable training requires finding and maintaining an equilibrium between the capabilities of the two models.
+The discriminator model is a neural network that learns a binary classification problem, using a sigmoid activation function in the output layer, and is fit using a binary cross entropy loss function. As such, the model predicts a probability that a given input is real (or fake as 1 minus the predicted) as a value between 0 and 1.
+
+- The loss function has the effect of penalizing the model proportionally to how far the predicted probability distribution differs from the expected probability distribution for a given image. This provides the basis for the error that is back propagated through the discriminator and the generator in order to perform better on the next batch.
+
+- The WGAN relaxes the role of the discriminator when training a GAN and proposes the alternative of a critic.
+Instead of using a discriminator to classify or predict the probability of generated images as being real or fake, the WGAN changes or replaces the discriminator model with a critic that scores the realness or fakeness of a given image.
+
+- This change is motivated by a mathematical argument that training the generator should seek a minimization of the distance between the distribution of the data observed in the training dataset and the distribution observed in generated examples. The argument contrasts different distribution distance measures, such as Kullback-Leibler (KL) divergence, Jensen-Shannon (JS) divergence, and the Earth-Mover (EM) distance, referred to as Wasserstein distance.
   
 
 
