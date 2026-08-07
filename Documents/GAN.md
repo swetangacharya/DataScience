@@ -20,14 +20,16 @@ say that the result looks fake the discriminator, which wants to to compute **G*
   <img width="892" height="143" alt="image" src="https://github.com/user-attachments/assets/66002945-38b5-41a4-8911-1147200a5861" />
 
 - Let us recap KL divergence
-$D_{KL} = \sum _x P(x)log \frac{P(x)}{Q(x)}$, we have log ratio of $P(x)$ and $Q(X)$, so if ratio is large then we can think that the outcomes that are high under $P(x)$ are ignored by (i.e., produced low outcome) $Q(x)$. but it is asymmetric. But this works well when $Q$ assign some probability to every outcome that comes from $P$. because if $Q$ assign zero probability to any outcome then $log \frac{P(x)}{Q(x)}$ becomes $\infty$. keeping this in mind we define new divergence which is called
+$D_{KL} = \sum _x P(x)log \frac{P(x)}{Q(x)}$,
+Averaging is done according to distribution $P$, it compares how much probability $P(x)$ is assigned to that outcome to the how much probability assigned to same outcome by distribution $Q$ we have log ratio of $P(x)$ and $Q(X)$, so if ratio is large then we can think that the outcomes that are high under $P(x)$ are ignored by (i.e., produced low outcome) $Q(x)$. but it is asymmetric. But this works well when $Q$ assign some probability to every outcome that comes from $P$. because if $Q$ assign zero probability to any outcome then $log \frac{P(x)}{Q(x)}$ becomes $\infty$. keeping this in mind we define new divergence which is called
 **Janson-Shannon Divergence**, which is symmetric.
   P={0.2,0.3,0.5} and Q={0.3,0.4,0.3}
 then $M =\frac{P+Q}{2}$, that is M ={0.25,0.35,0.4}
 
-$D_{JS}(P||Q) = \frac{D_{KL}(P||M) + D_{KL}(Q||M))}{2}$
-D_{KL}(P||M)=0.1193, D_{KL}(P||M)=0.1193,D_{KL}(Q||M)=0.1109
-so, $D_{JS}(P||Q)= 0.1151$, which tells in an average there is a 0.1151 bit of difference if we take samples from distribution $Q$ instead of $P$.
+$D_{JS}(P||Q) = \frac{D_{KL}(P||M) + D_{KL}(Q||M))}{2}$  
+$D_{KL}(P||M)=0.1193, D_{KL}(P||M)=0.1193,D_{KL}(Q||M)=0.1109$
+so, $D_{JS}(P||Q) = 0.1151$, which tells in an average there is a 0.1151 bit of difference if we take samples from distribution $Q$ instead of $P$. JSD value is always between [0,1] bits.
+
   
 
   
