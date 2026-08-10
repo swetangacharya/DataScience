@@ -212,7 +212,9 @@ $\color{blue}A=\{x,\mu_A(x)|x \in X\}$, here,
 $\mu_A(x)$ is called the membership function (MF) of $x$ in $A$. The membership function maps each element of $X$ to a membership value between 0 and 1.  
 ![Alt text](fuzzy1.png)
 
-
+**functionals:-**  it maps vectors to scalars. An evaluation functional $L$ at $x \in X$ is defined as the map:  
+$L_x: H \mapsto R$, where $H$ is a Hilbert space of functions on $X$. such that   
+$L_x(f)=f(x), for \forall x \in X, \forall f \in H$
 
 #### G  
 **[1] geometric distribution:-**  
@@ -245,12 +247,13 @@ Let $A \subseteq R^n$ be open set and $f:A \to R$, a function whose second deriv
 *  Function f is concave on set A if, and only if, its Hessian matrix is negative semi-definite at all points on the set.  
 * Function f is strictly concave on set A if, and only if, its Hessian matrix is negative definite at all points on the set.   
 ##### Taylor Polynomial 
-$\color{yellow}\Tau(X)=f(a)+(x-a)^T \Delta f(a)+ (x-a)^T\Delta f(a)+\frac{1}{2}(x-a)^T\Eta_f(a)(x-a)+...$  
-$\Eta_f(a)$ is a Hessian matrix evaluated at $a$, is the quadratic form that describes how the function curves in the vicinity of $a$.    
+$\color{yellow}\tau(X)=f(a)+(x-a)^T \Delta f(a)+ (x-a)^T\Delta f(a)+\frac{1}{2}(x-a)^T\eta_f(a)(x-a)+...$  
+$\eta_f(a)$ is a Hessian matrix evaluated at $a$, is the quadratic form that describes how the function curves in the vicinity of $a$.    
 ### Hilbert space:-  
 It is an inner product space that is compelete! functions are linear combination of features.  
 A RKHS belonging to a kernel $k(k,x')$ (evaluated at x, centered on x'), $x,x' \in X$ contains functions of the form  
-$\color{yellow}f(x)=\sum_{i=1}^m \alpha_ik(x,x_i)$  
+$\color{yellow}f(x)=\sum_{i=1}^m \alpha_ik(x,x_i)$.   
+ In (RKHS), "reproducing" means that a special kernel function can reproduce the exact value of any function at any point just by taking an inner product. Instead of plugging a coordinate $x$ into a function $f(x)$ directly, you get the same result by "dotting" (inner product) that function with a kernel template fixed at $x$.
 
  
 **Hinge Loss:-**  
