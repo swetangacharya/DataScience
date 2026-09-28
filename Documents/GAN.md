@@ -1,3 +1,6 @@
+**What is Generative Model?**   
+A classifier gives a label to the data. Generataive model asks different question. Can this model produce new samples that looks like as if they came from same distribution as training data? A generator model tries to model, approximate, or sample from a distribution over images such as $p(x)$, or from a conditional distribution such as $p(x|c)$ where $c$ might me label or prompt.
+
 **GAN**  
 - GAN has two components, Generator (**G**) and Discriminator(**D**). The Generator creates fake data and tries to convince D that it is real. The Discriminator receives data and tries to determine if it came from real data or was made by G (i.e., a 'Fake' data).
 - The generator takes in random data and tries to convert it into something that looks realistic. The dimensions $m$ and $d$ and could be tensors too. For images, $d$ would be something like $d=(C,W,H)$ and $m$ could be $m=(C',W',H')$
