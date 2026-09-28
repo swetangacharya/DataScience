@@ -318,6 +318,10 @@ $E[X]=np=10*(1/5)=2$, by markove inqeuality
 $P(X\ge 8)\le \frac{E[X]}{8}=2/8=1/4$ , but when we calculate actual probability   
 $P(X \ge 8) = \sum_{k=8}^{10} \binom{10}{8} (1/5)^8(4/5)^2=0.00007372$,   
 - so the question is why markov inequality gives exaggerated values? The upper bound provided can sometimes be quite loose or high because the inequality makes very few assumptions about the distribution, but it will always be true.
+
+[4] **Mode and Mode Collapse:-**  (Mode and mode collapse) A mode is a region or pattern with relatively high probability under a distribution. Mode collapse is a generative-model failure in which the model places too much probability on a small number of modes and too little probability on other important modes.
+
+
 #### N  
 [1] Normal Distribution:  
     *  PDF for one Random Variable:  $g(x;\mu,\sigma) \frac{1}{ (2\pi\sigma^2)^{0.5}} e^\frac {-(x-\mu)^2}{2\sigma^2}$  
