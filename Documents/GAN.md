@@ -13,6 +13,8 @@ A classifier gives a label to the data. Generataive model asks different questio
   	- **Expectation**- Because we cannot test every possible noise vector $z$, we sample a batch of noise vectors from $p(z)$, and calculate the average log-probability across that batch.
 - Now for $E_{x \sim P_{data}}[log D_{\phi}(x)]$
   	- The discriminator network $D_{\phi}$ processes the real sample $x$. and outputs probability. if score is 1 then it is 100% sure that sample is real. with score 0 it is 100% sure that sample is fake.
+  	- for real image $log D_{\phi}(x) = log(1)=0$, (zero penalty) and for fake images $log(0)=-\infty$,(massive penalty if it thinks that real sample is fake.)
+  	- Expectation $E_{x \sim p_{data}}(x)$, we take random batch of real images from our training set and calculate the average log-probability across that batch.
 	  
 
 
