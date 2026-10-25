@@ -8,7 +8,10 @@ A classifier gives a label to the data. Generataive model asks different questio
 - Let us understand each term one by one.
 - $\color{magenta} min_\theta max_\phi E_{x \sim p_{data}}[log(D_\phi(x))]  + E_{z \sim p(z)[log(1-D_\phi(G_\theta(z)))]}$
   	- **$E_{z \sim p(z)[log(1-D_\phi(G_\theta(z)))]}$**   - $z$ is a vector of random noise drawn from a simple prior distribution $p(z)$. $G_\theta$ is a generator network, parameterized by weights $\theta$.  • It takes the random noise $z$ and maps it into the data space, producing a synthetic (fake) sample (e.g., a generated image).
-  	- 
+  	- $D(\cdot)$ is Discriminator's Guess. outputs a probability. **A probability close to 1 means it thinks it is a real image, and close to 0 then it thinks it is a fake image**.
+  	- if $D_\phi(G_\theta(z))=0$. the term becomes $log(1-0)=log(1)=0$. This is ideal scenario for discriminator(zero penalty) as it has identified the image as fake.  if Discriminator is fooled by the fake, it outputs $D_\phi(G_theta(z))=1$. the term becomes $log(1-1)=log(0)= \infty$. This represents an infinite penalty as Discriminator failed to recognize the image as a fake as it is from $G_\theta(z)$, a genarator.
+
+
 
 
 
