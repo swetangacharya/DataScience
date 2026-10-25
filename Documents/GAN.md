@@ -3,6 +3,8 @@ A classifier gives a label to the data. Generataive model asks different questio
 
 **Sample Distribution:-** The sample distribution of a generator is the probability law of its output $\tilde{x}$. If the generator first draws random noise $z$ ~ $p(z)$ and then outputs $\tilde{x} = G_{\theta}(z)$, the distribution of $\tilde{x}$ is the model’s generated distribution.
 
+- **(Generator and Discriminator)**
+- A GAN generator is a map $G_\theta(z)$ from random noise $z \sim p(z)$ to a generated sample. A discriminator is a function $D_\phi(x) \in (0,1)$, whose output is interpreted as the probability that $x$ is real rather than generated.
 
 **GAN**  
 - GAN has two components, Generator (**G**) and Discriminator(**D**). The Generator creates fake data and tries to convince D that it is real. The Discriminator receives data and tries to determine if it came from real data or was made by G (i.e., a 'Fake' data).
