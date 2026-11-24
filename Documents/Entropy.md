@@ -39,3 +39,11 @@ Important to notice that reality hasn't changed, it is still P. The only thing t
 
 **KL Divergence:-** It does not measure uncertainity. it measures The extra uncertainty (or extra coding cost) caused by using the wrong beliefs. It is the panelty. It is the gap. It's avoidable part.
     
+**Cross-Entropy = Intrinsic Uncertainty + Model Error**  
+$H(P,Q) = H(P) + D_{KL} (P||Q)$   
+
+- Entropy = unavoidable ignorance.   
+- KL Divergence = avoidable ignorance due to a bad model.   
+- Cross-Entropy = total ignorance experienced when using that model.   
+
+That's why training a neural network minimizes cross-entropy rather than KL divergence. The entropy term $H(P)$ is fixed by the data and cannot be reduced, so minimizing cross-entropy automatically minimizes the KL-divergence part.
