@@ -26,5 +26,16 @@ then my entropy is 1 bit for head/tail and 2 bits for knowing which one of four 
 That is calculated from the fraction of blue balls known to be in the urn, and the fraction of red balls in the urn. You know these fractions that are common knowledge. So, let us say that the fraction of blue is $p$. The fraction of red then is of course (you do the math) $1−p$. And the entropy of the urn is  
 $H(X)=-(p log(p)+ (1-p) log(1-p))$  
     - If we know nothing else about this urn, then the uncertainty is equal to the log of the number of possible states, as I wrote before. Because there are only red and blue balls, that would be log 2. If the base of the log is 2, then the result is $log_2(2)=1$ bit.  
-So, if there are red and blue balls only in an urn, then I can predict the outcome of an experiment (pulling a ball from the urn) just as well as I can predict whether a fair coin lands on heads or tails. If I correctly predict the outcome (I will be able to do this about half the time, on average) I am correct purely by chance. Information is that which allows you to make a correct prediction with accuracy better than chance, which in this case means more than half of the time.
+So, if there are red and blue balls only in an urn, then I can predict the outcome of an experiment (pulling a ball from the urn) just as well as I can predict whether a fair coin lands on heads or tails. If I correctly predict the outcome (I will be able to do this about half the time, on average) I am correct purely by chance. Information is that which allows you to make a correct prediction with accuracy better than chance, which in this case means more than half of the time.   
+
+**Entropy and Cross-Entropy**
+Entropy tells us how much uncertainity actually exist in reality. No model involved yet. 
+$H(P) = -\sum p(x) log p(x)$   
+
+**Cross-Entropy** tells us how many bits we would need if reality is P but we encode/predict using model Q.
+$H(P,Q)= - \sum p(x) logq(x)$
+Important to notice that reality hasn't changed, it is still P. The only thing that has changed is our description of reality.   
+**Cross-entropy**= the apparent uncertainty when we use our model Q to describe a world that actually follows P.
+
+
     
