@@ -37,5 +37,5 @@ $H(P,Q)= - \sum p(x) logq(x)$
 Important to notice that reality hasn't changed, it is still P. The only thing that has changed is our description of reality.   
 **Cross-entropy**= the apparent uncertainty when we use our model Q to describe a world that actually follows P.
 
-
+**KL Divergence:-** It does not measure uncertainity. it measures The extra uncertainty (or extra coding cost) caused by using the wrong beliefs. It is the panelty. It is the gap. It's avoidable part.
     
